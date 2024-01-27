@@ -1,3 +1,9 @@
-
+.headerImg {
+  background-image: url("../images/pattern-bg-desktop.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 250px;
+  width: 100%;
+}
 
 /*# sourceMappingURL=index.css.map */

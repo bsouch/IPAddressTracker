@@ -1,0 +1,10 @@
+@import "./mixins.scss";
+@import "./variables.scss";
+
+.headerImg {
+    background-image: $img-header-desktop;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: $size-header-img-height-desktop;
+    width: $size-full-parent;
+}
