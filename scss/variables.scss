@@ -3,8 +3,12 @@ $page-desktop-break: 1440px;
 
 $clr-very-dark-grey: hsl(0, 0%, 17%);
 $clr-dark-grey: hsl(0, 0%, 59%);
+$clr-white: hsl(255, 100%, 100%);
+$clr-black: hsl(0, 0%, 0%);
 
 $font-size-input: 1.125rem;
+$font-size-sub-header: 0.625rem;
+$font-size-header: 1.5rem;
 
 $font-weight-std: 400;
 $font-weight-header: 500;
@@ -13,6 +17,21 @@ $font-weight-result: 700;
 $font-family-rubik: "Rubik";
 
 $img-header-desktop: url('../images/pattern-bg-desktop.png');
+$icon-arrow: url('../images/icon-arrow.svg');
 
 $size-header-img-height-desktop: 250px;
 $size-full-parent: 100%;
+$size-half-parent: 50%;
+$size-half-parent-negative: -50%;
+$size-none: 0;
+$size-input-height: 50px;
+$size-input-btn-width: 50px;
+
+$spacing-none: 0;
+$spacing-xs: 10px;
+$spacing-sm-md: 20px;
+$spacing-md: 25px;
+$spacing-md-lg: 30px;
+$spacing-input-text-indent: 20px;
+
+$border-radius: 10px;

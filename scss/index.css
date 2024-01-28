@@ -4,6 +4,119 @@
   background-size: cover;
   height: 250px;
   width: 100%;
+  position: fixed;
+  z-index: -1;
+}
+
+main {
+  position: relative;
+}
+
+.positionalWrapper {
+  display: grid;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.addressTrackerWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin: 30px 20px 0;
+}
+.addressTrackerWrapper span,
+.addressTrackerWrapper input {
+  font-family: "Rubik";
+}
+.addressTrackerWrapper .header {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: hsl(255deg, 100%, 100%);
+}
+.addressTrackerWrapper .inputWrapper {
+  position: relative;
+  width: clamp(375px, 50%, 500px);
+}
+.addressTrackerWrapper .inputWrapper input {
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  width: 100%;
+  padding: 0;
+  text-indent: 20px;
+}
+.addressTrackerWrapper .inputWrapper .iconWrapper {
+  display: grid;
+  place-content: center;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  position: absolute;
+  background-color: hsl(0deg, 0%, 0%);
+  height: 100%;
+  width: 50px;
+  top: 0;
+  right: 0;
+}
+.addressTrackerWrapper .inputWrapper .searchIcon {
+  background-image: url("../images/icon-arrow.svg");
+  background-repeat: no-repeat;
+  width: 10px;
+  height: 14px;
+}
+.addressTrackerWrapper .card {
+  display: flex;
+  flex-direction: row;
+  background-color: hsl(255deg, 100%, 100%);
+  border-radius: 10px;
+  width: 100%;
+}
+.addressTrackerWrapper .resultWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  gap: 10px;
+  flex: 1 1 0px;
+}
+.addressTrackerWrapper .resultHeader {
+  color: hsl(0deg, 0%, 59%);
+  font-weight: 500;
+  font-size: 0.625rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.addressTrackerWrapper .result {
+  font-weight: 700;
+}
+.addressTrackerWrapper .verticalSeperator {
+  background-color: hsl(0deg, 0%, 59%);
+  width: 0.1px;
+  height: 50px;
+  opacity: 0.5;
+  margin: auto 0;
+}
+
+@media (max-width: 640px) {
+  .addressTrackerWrapper .inputWrapper {
+    width: 100%;
+  }
+  .addressTrackerWrapper .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 25px;
+    padding: 25px 0;
+  }
+  .addressTrackerWrapper .resultWrapper {
+    justify-content: center;
+    align-items: center;
+    padding: 0 25px;
+  }
+  .addressTrackerWrapper .verticalSeperator {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

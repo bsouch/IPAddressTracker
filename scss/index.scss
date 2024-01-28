@@ -7,4 +7,136 @@
     background-size: cover;
     height: $size-header-img-height-desktop;
     width: $size-full-parent;
+    position: fixed;
+    z-index: -1;
 }
+
+main {
+    position: relative;
+}
+
+.positionalWrapper {
+    display: grid;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.addressTrackerWrapper {
+    @include displayFlexCol;
+    justify-content: center;
+    align-items: center;
+    gap: $spacing-md-lg;
+    margin: $spacing-md-lg $spacing-sm-md 0;
+
+    span,
+    input {
+        font-family: $font-family-rubik;
+    }
+
+    .header {
+        font-size: $font-size-header;
+        font-weight: $font-weight-header;
+        color: $clr-white;
+    }
+
+    .inputWrapper {
+        position: relative;
+        width: clamp(375px, 50%, 500px);
+
+        input {
+            height: $size-input-height;
+            border-radius: $border-radius;
+            border: none;
+            width: $size-full-parent;
+            padding: $spacing-none;
+            text-indent: $spacing-input-text-indent;
+        }
+
+        .iconWrapper {
+            @include displayGridCenter;
+            border-top-right-radius: $border-radius;
+            border-bottom-right-radius: $border-radius;
+            position: absolute;
+            background-color: $clr-black;
+            height: $size-full-parent;
+            width: $size-input-btn-width;
+            top: $size-none;
+            right: $size-none;
+        }
+
+        .searchIcon {
+            background-image: $icon-arrow;
+            background-repeat: no-repeat;
+            width: 10px;
+            height: 14px;
+        }
+    }
+
+    .card {
+        @include displayFlexRow;
+        background-color: $clr-white;
+        border-radius: $border-radius;
+        width: $size-full-parent;
+    }
+
+    .resultWrapper {
+        @include displayFlexCol;
+        padding: $spacing-md-lg;
+        gap: $spacing-xs;
+        flex: 1 1 0px;
+    }
+
+    .resultHeader {
+        color: $clr-dark-grey;
+        font-weight: $font-weight-header;
+        font-size: $font-size-sub-header;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .result {
+        font-weight: $font-weight-result;
+    }
+
+    .verticalSeperator {
+        background-color: $clr-dark-grey;
+        width: 0.1px;
+        height: 50px;
+        opacity: 0.5;
+        margin: auto 0;
+    }
+}
+
+@media (max-width: 640px) {
+
+    .addressTrackerWrapper {
+
+        .inputWrapper {
+            width: $size-full-parent;
+
+            input {}
+
+        }
+
+        .card {
+            @include displayFlexCol;
+            align-items: center;
+            width: $size-full-parent;
+            gap: $spacing-md;
+            padding: $spacing-md $spacing-none;
+        }
+
+        .resultWrapper {
+            justify-content: center;
+            align-items: center;
+            padding: $spacing-none $spacing-md;
+        }
+
+        .verticalSeperator {
+            display: none;
+        }
+    }
+
+}
+
+@media (max-width: $page-mobile-break) {}
