@@ -4,18 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="scss/normalise.css">
     <link rel="stylesheet" href="scss/index.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"
+        integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <title>Document</title>
 </head>
 
 <body>
     <main>
-        <div class="headerImg">
-
-        </div>
-        <div id="Map" class="map">
-
+        <div class="backgroundWrapper">
+            <div class="headerImg"></div>
+            <div id="Map" class="map"></div>
         </div>
 
         <div class="positionalWrapper">
@@ -24,8 +34,8 @@
                     IP Address Tracker
                 </span>
                 <div class="inputWrapper">
-                    <input class="ipInput" placeholder="Search for any IP address or domain" />
-                    <div class="iconWrapper">
+                    <input id="SearchCriteria" class="ipInput" placeholder="Search for any IP address or domain" />
+                    <div id="InputBtn" class="iconWrapper">
                         <div class="searchIcon"></div>
                     </div>
                 </div>
@@ -56,3 +66,7 @@
 </body>
 
 </html>
+
+<script src="js/leaflet/leafletApi.js"></script>
+<script src="js/ipify/ipifyApi.js"></script>
+<script src="js/index.js"></script>

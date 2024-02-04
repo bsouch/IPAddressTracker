@@ -2,14 +2,25 @@
   background-image: url("../images/pattern-bg-desktop.png");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 250px;
+  height: 350px;
   width: 100%;
-  position: fixed;
-  z-index: -1;
 }
 
 main {
   position: relative;
+}
+
+.backgroundWrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100dvb;
+  position: fixed;
+  width: 100%;
+}
+
+.map {
+  height: 100%;
+  background-color: grey;
 }
 
 .positionalWrapper {
@@ -25,6 +36,7 @@ main {
   align-items: center;
   gap: 30px;
   margin: 30px 20px 0;
+  z-index: 1;
 }
 .addressTrackerWrapper span,
 .addressTrackerWrapper input {

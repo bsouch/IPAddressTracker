@@ -7,12 +7,22 @@
     background-size: cover;
     height: $size-header-img-height-desktop;
     width: $size-full-parent;
-    position: fixed;
-    z-index: -1;
 }
 
 main {
     position: relative;
+}
+
+.backgroundWrapper {
+    @include displayFlexCol;
+    height: $size-full-viewport;
+    position: fixed;
+    width: $size-full-parent;
+}
+
+.map {
+    height: $size-full-parent;
+    background-color: grey;
 }
 
 .positionalWrapper {
@@ -26,7 +36,8 @@ main {
     justify-content: center;
     align-items: center;
     gap: $spacing-md-lg;
-    margin: $spacing-md-lg $spacing-sm-md 0;
+    margin: $spacing-md-lg $spacing-sm-md $spacing-none;
+    z-index: 1;
 
     span,
     input {
