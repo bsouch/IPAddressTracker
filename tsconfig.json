@@ -1,0 +1,10 @@
+{
+    "include": [
+        "js/*.ts",
+        "js/ipify/*.ts",
+        "js/leaflet/*.ts"
+    ],
+    "compilerOptions": {
+        "target": "es2015"
+    }
+}
