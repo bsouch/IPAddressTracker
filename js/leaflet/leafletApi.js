@@ -7,25 +7,58 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+/**
+ * Wrapper module that contains all objects required to interact with the Leaflet Library.
+ */
 var LeafletApiModule;
 (function (LeafletApiModule) {
-    class LeafletApiClient {
+    /**
+     * The Leaflet Client used to handle requests to the Leaflet Library.
+     */
+    class LeafletClient {
         constructor() {
-            this._ipifyModule = new IpifyModule.IpifyClient();
+            this._leafletConfig = new LeafletConfig();
             this.mapID = 'Map';
-            this.initMap = () => __awaiter(this, void 0, void 0, function* () {
-                this.map = L.map(`${this.mapID}`);
-                L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                    maxZoom: 19,
-                    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-                }).addTo(this.map);
-            });
+            this.defaultZoom = 13;
+            this.maxZoom = 19;
+            this.iconUrl = '../../images/icon-location.svg';
+            /**
+             * Updates the location shown on the Map.
+             * @param lat The latitude value.
+             * @param long The longitude value.
+             */
             this.updateMapLocation = (lat, long) => __awaiter(this, void 0, void 0, function* () {
-                this.map.setView([lat, long], 13);
-                L.marker([lat, long]).addTo(this.map);
+                this.map.setView([lat, long], this.defaultZoom);
+                L.marker([lat, long], { icon: this.markerIcon }).addTo(this.map);
             });
+            this.map = L.map(`${this.mapID}`);
+            this.markerIcon = L.icon({
+                iconUrl: this.iconUrl,
+                iconSize: [50, 60]
+            });
+            L.tileLayer(this._leafletConfig.Get('TileUrl'), {
+                maxZoom: this.maxZoom,
+                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+            }).addTo(this.map);
         }
-        LeafletApiClient() { }
     }
-    LeafletApiModule.LeafletApiClient = LeafletApiClient;
+    LeafletApiModule.LeafletClient = LeafletClient;
+    /**
+     * Holds configuration data for the Leaflet API.
+     */
+    class LeafletConfig {
+        constructor() {
+            this.config = new Map([
+                ['TileUrl', 'https://tile.openstreetmap.org/{z}/{x}/{y}.png']
+            ]);
+            /**
+             * Gets the specified key from the config map.
+             * @param key The string value to find in the config map.
+             * @returns Either the string value stored in config or undefined if not found.
+             */
+            this.Get = (key) => {
+                return this.config.get(key);
+            };
+        }
+    }
 })(LeafletApiModule || (LeafletApiModule = {}));
