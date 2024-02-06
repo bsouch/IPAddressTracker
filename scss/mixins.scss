@@ -1,0 +1,16 @@
+@import "./variables.scss";
+
+@mixin displayFlexCol {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin displayFlexRow {
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin displayGridCenter {
+    display: grid;
+    place-content: center;
+}
