@@ -31,14 +31,14 @@ var LeafletApiModule;
                 this.map.setView([lat, long], this.defaultZoom);
                 L.marker([lat, long], { icon: this.markerIcon }).addTo(this.map);
             });
-            this.map = L.map(`${this.mapID}`);
+            this.map = L.map(`${this.mapID}`, { zoomControl: false, attributionControl: false });
             this.markerIcon = L.icon({
                 iconUrl: this.iconUrl,
                 iconSize: [50, 60]
             });
             L.tileLayer(this._leafletConfig.Get('TileUrl'), {
                 maxZoom: this.maxZoom,
-                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                attribution: ''
             }).addTo(this.map);
         }
     }

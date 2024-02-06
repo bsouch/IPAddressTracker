@@ -39,6 +39,11 @@ main {
     margin: $spacing-md-lg $spacing-sm-md $spacing-none;
     z-index: 1;
 
+    input,
+    .button {
+        cursor: pointer;
+    }
+
     span,
     input {
         font-family: $font-family-rubik;
@@ -124,9 +129,6 @@ main {
 
         .inputWrapper {
             width: $size-full-parent;
-
-            input {}
-
         }
 
         .card {
@@ -147,7 +149,10 @@ main {
             display: none;
         }
     }
-
 }
 
-@media (max-width: $page-mobile-break) {}
+@media (max-width: $page-mobile-break) {
+    .headerImg {
+        background-image: $img-header-mobile;
+    }
+}

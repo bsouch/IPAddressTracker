@@ -38,6 +38,10 @@ main {
   margin: 30px 20px 0;
   z-index: 1;
 }
+.addressTrackerWrapper input,
+.addressTrackerWrapper .button {
+  cursor: pointer;
+}
 .addressTrackerWrapper span,
 .addressTrackerWrapper input {
   font-family: "Rubik";
@@ -128,6 +132,11 @@ main {
   }
   .addressTrackerWrapper .verticalSeperator {
     display: none;
+  }
+}
+@media (max-width: 375px) {
+  .headerImg {
+    background-image: url("../images/pattern-bg-mobile.png");
   }
 }
 
